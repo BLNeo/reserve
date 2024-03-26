@@ -48,13 +48,13 @@ func (s *SignRpcService) VerifyToken(token string) (*signPb.VerifyTokenRespond, 
 	in := &signPb.VerifyTokenRequest{
 		Token: token,
 	}
-	data, err := s.signRpcClient.VerifyToken(ctx, in)
+	_, err := s.signRpcClient.VerifyToken(ctx, in)
 	if err != nil {
 		return nil, err
 	}
 	resp := &signPb.VerifyTokenRespond{
-		UserId:   data.UserId,
-		UserName: data.UserName,
+		//UserId:   data.UserId,
+		//UserName: data.UserName,
 	}
 	return resp, nil
 }

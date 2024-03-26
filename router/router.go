@@ -15,6 +15,8 @@ func InitRouter(r *gin.Engine) {
 	r.Use(middleware.CORSMiddleware(), middleware.JWT())
 	testRoute(r.Group("/test"))
 	bookRoute(r.Group("/book"))
+	manageRoute(r.Group("/manage"))
+	clientRoute(r.Group("/manage"))
 }
 
 func testRoute(rg *gin.RouterGroup) {
@@ -24,4 +26,14 @@ func testRoute(rg *gin.RouterGroup) {
 func bookRoute(rg *gin.RouterGroup) {
 	rg.POST("/add", bookctl.AddBook)
 	rg.GET("/list", bookctl.ListBook)
+}
+
+// 后台端接口
+func manageRoute(rg *gin.RouterGroup) {
+
+}
+
+// 客户端接口
+func clientRoute(rg *gin.RouterGroup) {
+
 }
