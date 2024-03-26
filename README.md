@@ -1,4 +1,4 @@
-# reserve 预约座位服务
+# reserve 预约服务(图书馆座位)
 
 conf 配置
 
